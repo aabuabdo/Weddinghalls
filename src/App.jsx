@@ -2,13 +2,12 @@ import { useState } from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import "./App.css";
 import Home from "./Component/Home";
+import Test from "./Component/Test";
 import Weddinghalls from "./Component/Weddinghalls";
 import WeddingHallsbyid from "./Component/WeddingHallsbyid";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <Router>
       {/* Navigation Bar */}
@@ -29,6 +28,11 @@ function App() {
                   Wedding Halls by id
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/test">
+                  test
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
@@ -39,6 +43,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/weddinghalls" element={<Weddinghalls />} />
         <Route path="/WeddingHallsbyid" element={<WeddingHallsbyid />} />
+        <Route path="/test" element={<Test />} />
       </Routes>
     </Router>
   );
